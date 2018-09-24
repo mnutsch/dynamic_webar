@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script type="text/javascript">
+
+    // tell the web browser that this should be viewed in landscape mode only.
+    screen.orientation.lock("portrait-primary");
+
+    /**************************************************************************
+     * Name: addIframe(urlToAdd, IDForIframe)
+     * Description: This function adds a new iFrame to the view.
+     * urlToAdd = URL to a webAR page with a transparent background.
+     * IDforIFrame = String to use for the iFrame's ID.
+     * ***********************************************************************/
+    var addIframe = function(urlToAdd, IDForIframe) {
+      let iframe = document.createElement('iframe');
+      iframe.style = "top:0px; width:100%; height:100%; position: absolute; overflow:hidden;"
+      iframe.src = urlToAdd;
+      iframe.id = IDForIframe
+      document.body.appendChild(iframe);
+    }
+
+    /**************************************************************************
+     * Name: removeIframe(IDToRemove)
+     * Description: This function removes an iFrame
+     * IDforIFrame = String containing the iFrame's ID.
+     * ***********************************************************************/
+    var removeIframe = function(IDToRemove) {
+      var element = document.getElementsByTagName("iframe"), index;
+      // Search through the iFrames and remove the one we don't want.
+      for (index = element.length - 1; index >= 0; index--) {
+        if(element[index].id == IDToRemove){ 
+          element[index].parentNode.removeChild(element[index]);
+        }
+      }
+    }
+
+    /**************************************************************************
+     * Name: toggleOverlay(fileName, checkboxID, IDForIFrame)
+     * Description: This function selects and then calles addIframe or
+     * removeIframe based on whether or not a checkbox is checked.
+     * fileName = String containing the relative path to a file.
+     * checkboxID = String containing the ID of the checkbox.
+     * IDforIFrame = String containing the iFrame's ID.
+     * ***********************************************************************/
+    var toggleOverlay = function(fileName, checkboxID, IDForIFrame) {
+      if (document.getElementById(checkboxID).checked) {
+        addIframe(fileName, IDForIFrame);
+      } else {
+        removeIframe(IDForIFrame);
+      }
+    }
+
+    /**************************************************************************
+     * Name: addAll
+     * Description: This function checks all the boxes and calls toggleOverlay
+     * for each.
+     * ***********************************************************************/
+    var addAll = function() {
+      document.getElementById("yellowCheckbox").checked = true;
+      document.getElementById("redCheckbox").checked = true;
+      document.getElementById("blueCheckbox").checked = true;
+      toggleOverlay('arjstestYellow.html', 'yellowCheckbox', 'yellowIframe');
+      toggleOverlay('arjstestRed.html', 'redCheckbox', 'redIframe');
+      toggleOverlay('arjstestBlue.html', 'blueCheckbox', 'blueIframe');
+    }
+
+    /**************************************************************************
+     * Name: removeAll
+     * Description: This function unchecks all the boxes and calls toggleOverlay
+     * for each.
+     * ***********************************************************************/
+    var removeAll = function() {
+      document.getElementById("yellowCheckbox").checked = false;
+      document.getElementById("redCheckbox").checked = false;
+      document.getElementById("blueCheckbox").checked = false;
+      toggleOverlay('arjstestYellow.html', 'yellowCheckbox', 'yellowIframe');
+      toggleOverlay('arjstestRed.html', 'redCheckbox', 'redIframe');
+      toggleOverlay('arjstestBlue.html', 'blueCheckbox', 'blueIframe');
+    }
+
+  </script>
+</head>
+
+  <body style="width:100%; height:100%; background-color:lightgray; color: white;">
+
+    <iframe id="baseView" src="background.html" allowtransparency="true" style="top:0px; width:100%; height:100%; position: absolute; overflow:hidden;">
+    </iframe>
+
+    <div style="position:absolute; right:100px; bottom:50px; z-index: 10;">
+      <button onclick="addAll()">Add all</button><br/>
+      <input type="checkbox" id="yellowCheckbox" onchange="toggleOverlay('arjstestYellow.html', 'yellowCheckbox', 'yellowIframe');">Yellow<br/>
+      <input type="checkbox" id="redCheckbox" onchange="toggleOverlay('arjstestRed.html', 'redCheckbox', 'redIframe');">Red<br/>
+      <input type="checkbox" id="blueCheckbox" onchange="toggleOverlay('arjstestBlue.html', 'blueCheckbox', 'blueIframe');">Blue<br/>
+      <button onclick="removeAll()">Remove all</button><br/>
+    </div>
+
+  </body>
+
+</html>
