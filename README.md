@@ -31,11 +31,11 @@ You will want a computer and a mobile device (phone or tablet). It helps if you 
 ## Print out Target Markers:
 
 The webAR framework used in this tutorial works off of target markers. These are 2D images which serve as the location onto which AR objects are placed. The following is an image with the 3D target markers used in this tutorial. You can also find a copy of this image in the tutorial Github code. Please print out this image. (https://mnutsch.github.io/threeCodes.png)
-![alt text](https://mnutsch.github.io/threeCodes.png "Three Target Markers")
+![Three Target Markers](https://mnutsch.github.io/threeCodes.png "Three Target Markers")
 
 ## Creating Transparent WebAR Scenes:
 
-In order to demonstrate dynamically loading and unloading webAR scenes, we need some webAR scenes. (I created some for this tutorial, see the files: arjstestBlue.html(https://www.mattnutsch.com/dynamic_webar/arjstestBlue.html), arjstestRed.html(https://www.mattnutsch.com/dynamic_webar/arjstestRed.html), arjstestYellow.html(https://www.mattnutsch.com/dynamic_webar/arjstestYellow.html).) 
+In order to demonstrate dynamically loading and unloading webAR scenes, we need some webAR scenes. (I created some for this tutorial, see the files: [arjstestBlue.html](https://www.mattnutsch.com/dynamic_webar/arjstestBlue.html), [arjstestRed.html](https://www.mattnutsch.com/dynamic_webar/arjstestRed.html), [arjstestYellow.html](https://www.mattnutsch.com/dynamic_webar/arjstestYellow.html).) 
 
 <ol>
 <li>Start with creating a standard webAR scene using AR.js. A webAR scene is a web page showing the camera view with AR content overlayed on it. AR.js is a framework which combines AFrame & image recognition to make web accessible target marker based augmented reality. </li>
@@ -48,7 +48,7 @@ Repeat this for all of the webAR scenes to combine.</li>
 
 ## Creating the Background:
 
-We don't want the video to be removed from all of our webAR scenes, because the user needs to be able to see what the camera sees. We will create one webAR scene where we keep the background video. (In the tutorial Github repo, see the file: background.html(https://www.mattnutsch.com/dynamic_webar/background.html).)
+We don't want the video to be removed from all of our webAR scenes, because the user needs to be able to see what the camera sees. We will create one webAR scene where we keep the background video. (In the tutorial Github repo, see the file: [background.html](https://www.mattnutsch.com/dynamic_webar/background.html).)
 
 <ol>
 <li>Create a standard webAR scene using AR.js. 
@@ -58,7 +58,7 @@ Information about making a webAR scene with AR.js can be found here: https://git
   
 ## Combining WebAR Scenes - The Controller:
 
-Now that we have multiple webAR scenes, we need a way to display them simultaneously. To do this we will create a single web page with javascript code to control the adding and removing of AR scenes. (See the file: controller.html(https://www.mattnutsch.com/dynamic_webar/controller.html).)
+Now that we have multiple webAR scenes, we need a way to display them simultaneously. To do this we will create a single web page with javascript code to control the adding and removing of AR scenes. (See the file: [controller.html](https://www.mattnutsch.com/dynamic_webar/controller.html).)
 
 <ol>
 <li>Create an empty HTML web page.</li>
