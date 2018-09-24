@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+    <!-- include a-frame -->
+    <script src="https://www.mattnutsch.com/arjstest/js/barcode/examples/vendor/aframe.min.js"></script>
+
+    <!-- include ar.js for aframe -->
+    <script src='js/barcode/build/aframe-ar.js'></script>
+
+    <script>		
+
+      //remove the video tag
+      var removeVideos = function(){
+        var element = document.getElementsByTagName("video"), index;
+        for (index = element.length - 1; index >= 0; index--) {
+            element[index].style.display = "none";
+        }
+      }
+
+      //remove the Aframe VR button
+      var removeVRButton = function(){
+        var element = document.getElementsByClassName("a-enter-vr-button"), index;
+        for (index = element.length - 1; index >= 0; index--) {
+            element[index].style.display = "none";
+        }
+      }
+
+      // wait to remove videos
+      setTimeout(function(){
+        removeVideos(); 
+        removeVRButton();       
+      }, 2000); // wait 2 seconds
+    </script>
+
+  </head>
+
+  <body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
+
+      <a-scene embedded artoolkit='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+    
+        <a-marker type='barcode' value='20'>
+          <!-- Basic Box -->             
+          <!-- see: https://aframe.io/docs/0.8.0 -->
+          <a-box id="myBox" rotation="0 0 0" position='0 0.5 0' depth="1" height="1" width="1" material='opacity: 0.5; side:double; color:yellow;'></a-box>
+        
+        </a-marker>
+
+        <!-- add a simple camera -->
+        <a-entity camera></a-entity>
+      </a-scene>
+    </body>
+    </html>
+    

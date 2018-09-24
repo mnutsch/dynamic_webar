@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+    <!-- include a-frame -->
+    <script src="https://mnutsch.github.io/arjs_workshop/start/vendor/aframe/build/aframe.min.js"></script>
+
+    <!-- include ar.js for aframe -->
+    <script src='js/aframe-ar.js'></script>
+
+    <script>		
+      // remove the video tag
+      var removeVideos = function() {
+        var element = document.getElementsByTagName("video"), index;
+        for (index = element.length - 1; index >= 0; index--) {
+            element[index].style.display = "none";
+        }
+      }
+
+      //remove the Aframe VR button
+      var removeVRButton = function(){
+        var element = document.getElementsByClassName("a-enter-vr-button"), index;
+        for (index = element.length - 1; index >= 0; index--) {
+            element[index].style.display = "none";
+        }
+      }
+
+      // wait to remove videos
+      setTimeout(function(){
+        removeVideos(); 
+        removeVRButton();       
+      }, 2000); // wait 2 seconds
+    </script>
+
+  </head>
+
+  <!-- start the body of your page -->
+  <body style='margin : 0px; overflow: hidden;'>
+
+    <!-- Define your 3d scene and enabled ar.js -->
+    <a-scene debug embedded arjs='trackingMethod: best; debugUIEnabled: false;'>
+
+      <!-- Create a anchor to attach your augmented reality -->
+      <a-anchor hit-testing-enabled='true'>
+
+        <!-- Basic Box -->             
+        <!-- see: https://aframe.io/docs/0.8.0 -->
+        <a-box id="myBox" rotation="0 0 0" position='0 0.5 0' depth="1" height="1" width="1" material='opacity: 0.5; side:double; color:red;'></a-box>
+        
+      </a-anchor>
+
+      <!-- Define a static camera -->
+      <a-camera-static/>
+
+    </a-scene>
+
+  </body>
+
+</html>

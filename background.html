@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+    <!-- include a-frame -->
+    <script src="https://mnutsch.github.io/arjs_workshop/start/vendor/aframe/build/aframe.min.js"></script>
+    <!-- include ar.js for aframe -->
+    <script src='https://mnutsch.github.io/arjs_workshop/start/vendor/arjs/build/aframe-ar.js'></script>
+
+  </head>
+
+  <!-- start the body of your page -->
+  <body style='margin : 0px; overflow: hidden;'>
+
+    <!-- add some info at the top of the page -->
+    <div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1; color: white;'>
+      Instructions:<br/>
+      Point your camera at the target markers.
+    </div>    
+
+    <!-- Define your 3d scene and enabled ar.js -->
+    <a-scene debug embedded arjs='trackingMethod: best; debugUIEnabled: false;'>
+
+      <!-- Create a anchor to attach your augmented reality -->
+      <a-marker preset='kanji' hit-testing-enabled='true'>
+	  
+		  <a-plane
+			id = "helloWorldPlane"
+			geometry="primitive: plane; width: 1; height: 1; height: auto"
+			material="opacity: 0.5; color: white;"
+			position='0 0.25 0'>
+			
+			<a-entity id="planeText" position='0.65 0 0' rotation='290 0 0' scale='2 2 2' text="value: Augmented Reality" align-"center"></a-entity>
+		</a-plane>
+
+    </a-marker>
+
+      <!-- Define a static camera -->
+      <a-camera-static/>
+
+    </a-scene>
+
+  </body>
+
+</html>
