@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html>
 
+<!-- This is a duplicate of controller.html in case people type in the URL, but leave out the file name. -->
+
 <head>
   <script type="text/javascript">
 
     // tell the web browser that this should be viewed in landscape mode only.
-    screen.orientation.lock("portrait-primary");
+    try{
+      screen.orientation.lock("portrait-primary");
+    }
+    catch(err) {
+      console.log("Unable to lock screen orientation to landscape.")
+    }
 
     /**************************************************************************
      * Name: addIframe(urlToAdd, IDForIframe)
