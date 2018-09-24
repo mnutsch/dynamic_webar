@@ -31,6 +31,7 @@ You will want a computer and a mobile device (phone or tablet). It helps if you 
 ## Print out Target Markers:
 
 The webAR framework used in this tutorial works off of target markers. These are 2D images which serve as the location onto which AR objects are placed. The following is an image with the 3D target markers used in this tutorial. You can also find a copy of this image in the tutorial Github code. Please print out this image. (https://mnutsch.github.io/threeCodes.png)
+![alt text](https://mnutsch.github.io/threeCodes.png "Three Target Markers")
 
 ## Creating Transparent WebAR Scenes:
 
