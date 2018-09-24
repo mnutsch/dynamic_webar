@@ -10,12 +10,9 @@
 
     <script>
       // tell the web browser that this should be viewed in landscape mode only.
-      try{
-        screen.orientation.lock("portrait-primary");
-      }
-      catch(err) {
-        console.log("Unable to lock screen orientation to landscape.")
-      }
+      screen.orientation.lock('portrait').catch(function(error) {
+        console.log("Unable to lock screen orientation to landscape.");
+      });
       
       // remove the video tag
       var removeVideos = function() {
