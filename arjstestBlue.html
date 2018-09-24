@@ -9,6 +9,9 @@
     <script src='js/aframe-ar.js'></script>
 
     <script>		
+      // tell the web browser that this should be viewed in landscape mode only.
+      screen.orientation.lock("portrait-primary");
+
       // remove the video tag
       var removeVideos = function() {
         var element = document.getElementsByTagName("video"), index;
