@@ -2,7 +2,9 @@
 Author: Matt Nutsch
 Date: 9-23-2018
 
-This is a proof of concept showing how to dynamically combine and divide different webAR pages. **Disclaimer: This code is experimental and may crash or not display properly on mobile devices. For best results use the Chrome browser on a PC with a webcam.**
+This is a proof of concept showing how to dynamically combine and divide different webAR pages. 
+
+**Disclaimer: This code is experimental and may crash or not display properly on mobile devices. For best results use the Chrome browser on a PC with a webcam.**
 
 [![Dynamic WebAR](https://www.mattnutsch.com/dynamic_webar/dynamic_webar.gif)](https://youtu.be/DKSbBDH8Oqs)
 
