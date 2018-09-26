@@ -30,7 +30,7 @@ Finally, devices can't store an infinite amount of AR content. By dynamically lo
 
 ## What do I need for this tutorial?
 
-You will want a computer and a mobile device (phone or tablet). It helps if you have a basic understanding of website HTML and Javascript. (The specific framework of webAR used in this tutorial is AR.js with Aframe, but the exact framework for webAR isn't important.) Finally, it help
+You will want a computer with a web cam. It helps if you have a basic understanding of website HTML and Javascript. (The specific framework of webAR used in this tutorial is AR.js with Aframe, but the exact framework for webAR isn't important.) Finally, it help
 
 ## Print out Target Markers:
 
