@@ -9,10 +9,6 @@
     <script src='js/barcode/build/aframe-ar.js'></script>
 
     <script>	
-      // tell the web browser that this should be viewed in landscape mode only.
-      screen.orientation.lock('portrait').catch(function(error) {
-        console.log("Unable to lock screen orientation to landscape.");
-      });
 
       //remove the video tag
       var removeVideos = function(){
@@ -39,7 +35,7 @@
 
   </head>
 
-  <body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
+  <body style='margin: 0px; overflow: hidden; font-family: Monospace; background-color: transparent;'>
 
       <a-scene embedded artoolkit='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
     

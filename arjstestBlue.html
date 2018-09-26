@@ -9,10 +9,6 @@
     <script src='js/aframe-ar.js'></script>
 
     <script>		
-      // tell the web browser that this should be viewed in landscape mode only.
-      screen.orientation.lock('portrait').catch(function(error) {
-        console.log("Unable to lock screen orientation to landscape.")
-      });
 
       // remove the video tag
       var removeVideos = function() {
@@ -40,7 +36,7 @@
   </head>
 
   <!-- start the body of your page -->
-  <body style='margin : 0px; overflow: hidden;'>  
+  <body style='margin : 0px; overflow: hidden; background-color: transparent;'>  
 
     <!-- Define your 3d scene and enabled ar.js -->
     <a-scene debug embedded arjs='trackingMethod: best; debugUIEnabled: false;'>
